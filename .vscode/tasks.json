@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Reset Posit Assistant Demo",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                // Reset layout
+                "close-all-editors",
+                "reset-layout",
+                // Reset active console
+                "reset active console",
+                // Drop all git changes
+                "clean-git"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "reset active console",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "clear-active-console",
+                "restart-active-console"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "clean-git",
+            "command": "${command:git.cleanAll}",
+            "problemMatcher": [],
+            "hide": true
+        },
+        {
+            "label": "reset-layout",
+            "command": "${command:workbench.action.positronAgentLayout}",
+            "problemMatcher": [],
+            "hide": true
+        },
+        {
+            "label": "restart-active-console",
+            "command": "${command:workbench.action.language.runtime.restartActiveSession}",
+            "problemMatcher": [],
+            "hide": true
+        },
+        {
+            "label": "clear-active-console",
+            "command": "${command:workbench.action.positronConsole.clearConsole}",
+            "problemMatcher": [],
+            "hide": true
+        },
+        {
+            "label": "close-all-editors",
+            "command": "${command:workbench.action.closeAllEditors}",
+            "problemMatcher": [],
+            "hide": true
+        }
+    ]
+}
