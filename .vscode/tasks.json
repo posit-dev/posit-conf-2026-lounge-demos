@@ -13,7 +13,8 @@
                 // Reset active console
                 "reset active console",
                 // Drop all git changes
-                "clean-git"
+                "clean-git",
+                "new-chat"
             ],
             "problemMatcher": []
         },
@@ -53,6 +54,12 @@
         {
             "label": "close-all-editors",
             "command": "${command:workbench.action.closeAllEditors}",
+            "problemMatcher": [],
+            "hide": true
+        },
+                {
+            "label": "new-chat",
+            "command": "${command:posit-assistant.newChat}",
             "problemMatcher": [],
             "hide": true
         }
