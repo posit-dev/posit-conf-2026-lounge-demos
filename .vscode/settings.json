@@ -1,3 +1,4 @@
 {
-  "dataConnections.enabled": true
+  "dataConnections.enabled": true,
+  "assistant.experimentalFeatures": true
 }
